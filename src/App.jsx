@@ -4,6 +4,11 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import {User, MessageCircle, X, Heart } from 'lucide-react'
 
+
+
+
+
+
 const ProfileSelector = () => (
   <div className="rounded-lg overflow-hidden bg-white shadow-lg">
     <div className="relative">
@@ -27,17 +32,41 @@ const ProfileSelector = () => (
       </div>
 );
 
+const MatchesList = () => (
+  <div className="rounded-lg shadow-lg p-4">
+    <h2 className="text-2xl font-bold mb-4">Matches</h2>
+    <ul>
+    {[
+      {id:1, firstName: "foo", lastName: "bar", imageUrl: "http://127.0.0.1:8080/02a70078-23bc-4a0b-8c8d-3a4d039e6d60.jpg"}, 
+      {id:2, firstName: "boo", lastName: "far", imageUrl: "http://127.0.0.1:8080/02a70078-23bc-4a0b-8c8d-3a4d039e6d60.jpg"}, 
+    ].map(match => (
+      <li key={match.id} className="mb-2">
+        <button className="w-full hover:bg-grey-100 rounded flex item-center">
+        <img onScroll={match.imageUrl} className="w-16 h-16 rounded-full mr-3" />
+        <span>
+          <h3 className="font-bold">{match.firstName} {match.lastName}</h3>
+        </span>
+        </button>
+      </li>
+    ))
+    }
+    </ul>
+  </div>
+
+)
+
 
 function App() {
-  return (<>
+  return (
   <div className="max-w-md mx-auto p-4">
   <nav className="flex justify-between mb-4">
   <User /> 
   <MessageCircle />
   </nav>
   <ProfileSelector />
+  {/* <MatchesList /> */}
   </div>
- </>) 
+) 
  }
 
 export default App
