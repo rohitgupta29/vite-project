@@ -1,9 +1,9 @@
 // import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 import {User, MessageCircle, X, Heart } from 'lucide-react'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 
 
@@ -60,7 +60,7 @@ const MatchesList = ({onSelectMatch}) => (
 
 const ChatScreen = () => {
 
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
 
   const handleSend = () => {
     if (input.trim()) {
@@ -79,9 +79,9 @@ const ChatScreen = () => {
     "How are you?",
     "How are you?"
   ].map((message, index) => (
-    <dev key={index}>
-      <dev className="mb-4 p-2 rounded bg-grey-100">{message}</dev>
-    </dev>)
+    <div key={index}>
+      <div className="mb-4 p-2 rounded bg-grey-100">{message}</div>
+    </div>)
 
 )
 }
